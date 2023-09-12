@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Image } from 'react-native'
+import Swiper from 'react-native-deck-swiper';
+
 import seed from '../../firebase/seed.json'
 
 const ProfileCard = () => {
     console.log('user details:', seed)
     const [users, setUsers] = useState([]);
+    const [imageStr, setImageStr] = useState('')
 
     useEffect(() => {
         const fetchImagesForUsers = async () => {
@@ -16,7 +19,13 @@ const ProfileCard = () => {
                     const response = await fetch(user.fetch)
                     if (response.ok) {
                         const data = await response.json()
-                        const updatedUser = { ...user, randomImage: data.message };
+
+                        const updatedUser = { 
+                            // ...user, 
+                            id: user.id,
+                            username: user.username,
+                            randomImage: data.message 
+                        };
 
                         // console.log('data', data)
                         // user.randomImage = data.message; 
@@ -30,30 +39,45 @@ const ProfileCard = () => {
                     console.error('Error fetching image:', error.message)
                 }
                 // updatedUsers.push(user)
-                // setUsers(updatedUsers)
+                setUsers(updatedUsers)
             }
         }
 
         fetchImagesForUsers()
     }, [])
-console.log('updated user:', users)
-// console.log('user.randomImage:', users[0].randomImage);
 
+    console.log('updated user:', users)
 
     return (
         <View>
-            {users.map((user) => (
-                <View key={user.id}>
-                    <Text>{user.username}</Text>
-                    {user.randomImage && (
-                        <Image source={{uri: user.randomImage}} style={{ resizeMode: 'cover', width: '75%', height: '75%' }}/> 
-                    )}
-                    {/* <Image src={user.randomImage} style={{height:'200px', width:'200px'}}/> */}
-                </View>
-            ))}
             <Text>User Profiles</Text>
-        </View>
+            {users.map((user) => (
+                <Swiper 
+                    key={user.id}
+                    cards={[user]}
+                    renderCard={(user) => (
+                        <View key={user.id}>
+                            {/* <Text>{user.username}</Text> */}
+                            {user.randomImage && (
+                                <Image 
+                                    source={{uri: user.randomImage}} 
+                                    style={{ resizeMode: 'cover', width: '75%', height: '75%' }}
+                                /> 
+                            )}
+                        </View>
+                    )}
+                    onSwipedLeft={(cardIndex) => {
+                        console.log(`Swiped left on card at index ${cardIndex}`)
+                    }}
+                    onSwipedRight={(cardIndex) => {
+                        console.log(`Swiped right on card at index ${cardIndex}`)
+                    }}
+                >
+                    <Button title='You Can Press Me' />
 
+                </Swiper>
+            ))}
+        </View>
     )
 }
 
