@@ -21,7 +21,6 @@ const ProfileCard = () => {
                         const data = await response.json()
 
                         const updatedUser = { 
-                            // ...user, 
                             id: user.id,
                             username: user.username,
                             randomImage: data.message 
@@ -31,7 +30,7 @@ const ProfileCard = () => {
                         // user.randomImage = data.message; 
 
                         updatedUsers.push(updatedUser)
-                        setUsers(updatedUsers)
+                        // setUsers(updatedUsers)
                     } else {
                         console.error('Failed to fetch image')
                     }
@@ -39,8 +38,9 @@ const ProfileCard = () => {
                     console.error('Error fetching image:', error.message)
                 }
                 // updatedUsers.push(user)
-                setUsers(updatedUsers)
             }
+            setUsers(updatedUsers)
+
         }
 
         fetchImagesForUsers()
@@ -125,7 +125,9 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection:'row',
-        marginBottom: 20,
+        justifyContent: 'space-between',
+        width:'80%',
+        marginTop: 20,
     }
 })
 
