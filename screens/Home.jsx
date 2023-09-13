@@ -12,10 +12,10 @@ function HomeScreen({ navigation }) {
         <View>
             <Text>Home screen!</Text>
             <ProfileCard />
-            <Button 
+            {/* <Button 
                 title='Go to Details'
                 onPress={() => navigation.navigate('Details')}
-            />
+            /> */}
         </View>
     )
 }
