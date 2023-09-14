@@ -25,19 +25,13 @@ const ProfileCard = () => {
                             username: user.username,
                             randomImage: data.message 
                         };
-
-                        // console.log('data', data)
-                        // user.randomImage = data.message; 
-
                         updatedUsers.push(updatedUser)
-                        // setUsers(updatedUsers)
                     } else {
                         console.error('Failed to fetch image')
                     }
                 } catch (error) {
                     console.error('Error fetching image:', error.message)
                 }
-                // updatedUsers.push(user)
             }
             setUsers(updatedUsers)
 
