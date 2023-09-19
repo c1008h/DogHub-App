@@ -1,7 +1,5 @@
 import * as firebase from 'firebase/app'
 import 'firebase/firestore';
-import 'firebase/auth'
-import 'firebase/database'
 
 const firebaseConfig = {
     apiKey: process.env.YOUR_API_KEY,
@@ -13,9 +11,9 @@ const firebaseConfig = {
     appId: process.env.YOUR_APP_ID,
 }
 
-if (!firebase.apps.length) {
+// if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
-}
+// }
 
 const firestore = firebase.firestore();
 
