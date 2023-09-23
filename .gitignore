@@ -3,6 +3,13 @@
 # dependencies
 node_modules/
 
+android/
+ios/
+.env
+
+firebase/
+firebase/firebaseConfig.ts
+
 # Expo
 .expo/
 dist/
