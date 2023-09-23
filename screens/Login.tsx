@@ -12,4 +12,4 @@ function Login({ navigation }) {
     )
 }
 
-export default HomeScreen;
+export default Login;

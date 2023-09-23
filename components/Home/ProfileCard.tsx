@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native'
 import Swiper from 'react-native-deck-swiper';
 
-import seed from '../../firebase/seed.json'
+import seed from '../../typescript/firebase/seed.json'
 
 const ProfileCard = () => {
     console.log('user details:', seed)

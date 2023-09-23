@@ -1,11 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen, DetailsScreen, ProfileScreen } from './screens';
-
-const Stack = createStackNavigator();
+import { HomeScreen, DetailsScreen, ProfileScreen } from './typescript/screens';
 
 export default function App() {
   return (
@@ -16,8 +13,6 @@ export default function App() {
         <Stack.Screen name="Profile" component={ProfileScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
-
-      // {/* <StatusBar style="auto" /> */}
   );
 }
 
