@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 
-const Chat = () => {
+const ChatRoom = () => {
     return (
         <View>
             <Text>Chat</Text>
@@ -9,4 +9,4 @@ const Chat = () => {
     )
 }
 
-export default Chat;
+export default ChatRoom;

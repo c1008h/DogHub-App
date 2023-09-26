@@ -51,6 +51,7 @@ const Header: React.FC<Props> = ({ navigationProps }) => {
         setMessageClicked(false)
         setProfileClicked(false)
         setRightClicked(!rightClicked);
+        navigationProps.navigate('Matches')
     };
 
     return (
@@ -92,14 +93,15 @@ const styles = StyleSheet.create({
         backgroundColor:'#fe7a86',
         borderRadius: 15,
         height: '100%',
-        width:'75%',
-        // width: '50%', 
-        
+        width:'75%',        
     },
     container: {
         flexDirection:'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingTop:'5%',
+        paddingBottom:'2%',
+        paddingHorizontal:'2%'
     },
     center: {
         flexDirection:'row',
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
     right: {
         flex:1,
         alignItems:'flex-end',
-        paddingRight: 30,
+        // paddingRight: 30,
     }
 });
 

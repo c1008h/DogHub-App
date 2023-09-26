@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { Home, Profile, Chat, OtherProfiles, Matches } from './screens';
+import { Home, Profile, ChatRoom, OtherProfiles, Matches, List } from './screens';
 import Header from './components/Header';
 
 // type RootStackParamList = {
@@ -24,7 +24,8 @@ export default function App() {
       >
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="ChatRoom" component={ChatRoom} />
+        <Stack.Screen name="ChatList" component={List} />
         <Stack.Screen name="OtherProfiles" component={OtherProfiles} />
         <Stack.Screen name="Matches" component={Matches} />
       </Stack.Navigator>
