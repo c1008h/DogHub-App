@@ -10,9 +10,6 @@ ios/
 firebase/
 firebase/firebaseConfig.ts
 
-GoogleService-Info.plist
-google-service.json
-
 # Expo
 .expo/
 dist/
