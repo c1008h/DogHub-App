@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "790563846258",
+    "project_id": "doghub-ad016",
+    "storage_bucket": "doghub-ad016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790563846258:android:4ea125e4d17aaa1d29eaeb",
+        "android_client_info": {
+          "package_name": "com.doghub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKFrExg9z9_skif5Q6G66uCeU4U8paPWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,7 +16,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.doghub"
+      "bundleIdentifier": "com.doghub",
+      "useFrameworks": "static"
     },
     "android": {
       "adaptiveIcon": {
